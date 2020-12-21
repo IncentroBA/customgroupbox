@@ -8,16 +8,17 @@ import { Style, mergeNativeStyles } from '@mendix/pluggable-widgets-tools';
 import { CustomGroupboxProps } from '../typings/CustomGroupboxProps';
 
 export interface CustomStyle extends Style {
-  container: ViewStyle;
+  headerContainer: ViewStyle;
   label: TextStyle;
   innerContainer: ViewStyle;
   selectedContainer: ViewStyle;
   divider: ViewStyle;
   icon: ViewStyle;
+  groupboxParent: ViewStyle
 }
 
 const defaultStyle: CustomStyle = {
-  container: {},
+  headerContainer: {},
   label: {},
   innerContainer: {},
   selectedContainer: {},
@@ -27,7 +28,8 @@ const defaultStyle: CustomStyle = {
   },
   icon: {
     alignSelf: 'flex-end'
-  }
+  },
+  groupboxParent: {}
 };
 
 interface State {
@@ -53,20 +55,25 @@ export class CustomGroupbox extends Component<CustomGroupboxProps<CustomStyle>, 
     };
       
     return (
-      <View style={this.state.showContent ? this.styles.selectedContainer : this.styles.container}>
-        <View style={this.styles.icon}>{this.state.showContent ? icons.collapseIcon : icons.expandIcon}</View>
+      <View style={this.styles.groupboxParent}>
+        <TouchableOpacity onPress={this.toggleContent}>
+          <View style={this.styles.headerContainer}>
+          <View>{this.props.header}</View>
+            <View style={this.styles.icon}>{this.state.showContent ? icons.collapseIcon : icons.expandIcon}</View>
+          </View>
+        </TouchableOpacity>
 
-        <TouchableOpacity onPress={this.toggleContent}>{this.props.header}</TouchableOpacity>
-        
+      <View style={this.state.showContent ? this.styles.selectedContainer : null}>
         {this.state.showContent && <View style={this.styles.innerContainer}>{this.props.content}</View>}
-
         {this.props.showDivider && <View style={this.styles.divider}></View>}
       </View>
+      </View>
+      
     );
   }
 
   toggleContent() {
-    this.setState({showContent: !this.state.showContent})
+    this.setState({ showContent: !this.state.showContent })
   }
 
   private renderIcon = (glyph: string, toBeRenderedIcon?: DynamicValue<NativeIcon>) => {

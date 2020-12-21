@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="incentro.customgroupbox.CustomGroupbox" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Native"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Custom Groupbox</name>
+    <description>Groupbox with content in the header</description>
+    <icon/>
+    <properties>
+        <propertyGroup caption="General">
+            <property key="header" type="widgets" required="true">
+	            <caption>Header</caption>
+	            <description>Content of the header</description>
+            </property>
+            <property key="content" type="widgets" required="false">
+	            <caption>Content</caption>
+	            <description>Content of the groupbox</description>
+            </property>
+            <property key="showDivider" type="boolean" defaultValue="false">
+                <caption>Divider</caption>
+                <description>Show a simple divider between items.</description>
+            </property>
+            <property key="expandIcon" type="icon" required="false">
+                <caption>Expand icon</caption>
+                <description>Icon used to indicate that the group box can be expanded.</description>
+            </property>
+            <property key="collapseIcon" type="icon" required="false">
+                <caption>Collapse icon</caption>
+                <description>Icon used to indicate that the group box can be collapsed.</description>
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>
