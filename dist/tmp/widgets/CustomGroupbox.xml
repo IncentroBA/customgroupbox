@@ -28,6 +28,11 @@
                 <caption>Collapse icon</caption>
                 <description>Icon used to indicate that the group box can be collapsed.</description>
             </property>
+            <property key="startCollapsed" type="boolean" defaultValue="true">
+                <caption>Start collapsed</caption>
+                <description>Start collapsed when widget is loaded</description>
+            </property>
+
         </propertyGroup>
     </properties>
 </widget>

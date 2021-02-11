@@ -14,6 +14,7 @@ export interface CustomGroupboxProps<Style> {
     showDivider: boolean;
     expandIcon?: DynamicValue<NativeIcon>;
     collapseIcon?: DynamicValue<NativeIcon>;
+    startCollapsed: boolean;
 }
 
 export interface CustomGroupboxPreviewProps {
@@ -24,4 +25,5 @@ export interface CustomGroupboxPreviewProps {
     showDivider: boolean;
     expandIcon: { type: "glyph"; iconClass: string; } | { type: "image"; imageUrl: string; } | null;
     collapseIcon: { type: "glyph"; iconClass: string; } | { type: "image"; imageUrl: string; } | null;
+    startCollapsed: boolean;
 }

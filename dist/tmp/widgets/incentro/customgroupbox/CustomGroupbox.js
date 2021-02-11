@@ -271,7 +271,7 @@ class CustomGroupbox extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
             return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(mendix_components_native_Icon__WEBPACK_IMPORTED_MODULE_2__["Icon"], { icon: nativeIcon });
         };
         this.toggleContent = this.toggleContent.bind(this);
-        this.state = { showContent: false, };
+        this.state = { showContent: (this.props.startCollapsed ? false : true), };
     }
     render() {
         const icons = {

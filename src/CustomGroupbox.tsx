@@ -43,17 +43,18 @@ export class CustomGroupbox extends Component<CustomGroupboxProps<CustomStyle>, 
   constructor(props: CustomGroupboxProps<CustomStyle>){
     super(props)
     this.toggleContent = this.toggleContent.bind(this)
-    this.state = { showContent: false, }
+    this.state = { showContent: (this.props.startCollapsed ? false : true ), }
   }
 
   private readonly styles = mergeNativeStyles(defaultStyle, this.props.style);
-    
+
   render(): ReactNode {
     const icons = {
       collapseIcon: this.renderIcon(defaultCollapseIconGlyph, this.props.collapseIcon),
       expandIcon: this.renderIcon(defaultExpandIconGlyph, this.props.expandIcon),
     };
-      
+
+
     return (
       <View style={this.styles.groupboxParent}>
         <TouchableOpacity onPress={this.toggleContent}>
@@ -68,7 +69,7 @@ export class CustomGroupbox extends Component<CustomGroupboxProps<CustomStyle>, 
         {this.props.showDivider && <View style={this.styles.divider}></View>}
       </View>
       </View>
-      
+
     );
   }
 
