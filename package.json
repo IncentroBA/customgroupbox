@@ -29,6 +29,5 @@
     "@types/react-native": "~0.61.23"
   },
   "dependencies": {
-    "react-native-camera": "^3.42.1"
   }
 }
