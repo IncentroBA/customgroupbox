@@ -25,3 +25,4 @@ https://github.com/IncentroBA/customgroupbox/issues
 ## Development and contribution
 - Rob Duits
 - [Bart Onstee](https://github.com/bartonstee)
+- Jowan Wondergem
